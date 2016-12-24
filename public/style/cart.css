@@ -25,8 +25,9 @@
 }
 
 .product-rating{
-	font-size: 20px;
-	margin-bottom: 25px;
+  font-size: 20px;
+    margin: 0 auto;
+    width: 60%;
 }
 
 .product-price{

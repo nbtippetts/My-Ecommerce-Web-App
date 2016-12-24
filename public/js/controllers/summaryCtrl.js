@@ -1,6 +1,17 @@
-app.controller('summaryCtrl', ['$scope', '$http', 'ngCart', function($scope, $state, $http, ngCart, mainService) {
-  console.log('this is cart', ngCart);
-    ngCart.setTaxRate(7.5);
-    ngCart.setShipping(2.99);
+app.controller('summaryCtrl',function($scope, $state, $stateParams, $http, ngCart, mainService) {
 
-}]);
+  ngCart.setTaxRate(7.5);
+  ngCart.setShipping(2.99);
+
+
+  $scope.getOrder = function(){
+      mainService.getOrder($stateParams.id).then(function(response){
+        console.log('this is order id', response);
+        $scope.ordering = response.data.pop();
+      });
+    }
+
+    $scope.getOrder();
+
+
+});

@@ -29,17 +29,27 @@ var app = angular.module('lifted', ['ngRoute', 'ui.router', 'ngAnimate', 'ngCart
           controller: 'cartCtrl'
         })
 
-        .state('order', {
-          url: '/order',
+        .state('orders', {
+          url: '/orders',
           templateUrl: '../view/checkout/order.html',
-          controller: 'orders'
+          controller: 'orderCtrl'
         })
 
-        .state('summary', {
-          url: '/summary',
+        .state('order', {
+          url: '/orders/:id',
           templateUrl: '../view/checkout/summary.html',
-          controller: 'orders'
+          controller: 'summaryCtrl'
         })
+
+        .state('payment', {
+          url: '/payment',
+          templateUrl: '../view/checkout/payment.html',
+          //controller: 'paymentCtrl'
+        })
+
+
+
+
 
         // .state('team', {
         //   url: '/team',

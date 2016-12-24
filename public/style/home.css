@@ -51,6 +51,12 @@ span[ng-click] {
         cursor: pointer;
 }
 
+.check-out-wid {
+  width: 10%;
+  cursor: pointer;
+  margin: 0 auto;
+}
+
 .show-cart {
   display: flex;
   justify-content: flex-end;

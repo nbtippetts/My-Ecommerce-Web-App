@@ -28,7 +28,7 @@ module.exports = {
             });
     },
     getOrder: function(req, res) {
-        var id = [req.params.id];
+        var id = [req.query.id];
         db.orders.read_order(id,
             function(err, result) {
                 console.log(err);

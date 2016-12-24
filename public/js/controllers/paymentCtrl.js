@@ -1,4 +1,5 @@
-app.controller('paymentCtrl', function($scope, $state) {
+app.controller('paymentCtrl', function($scope, $state, $stateParams, $http, ngCart, mainService) {
+
 //
 //     var $form = $('#payment-form');
 //     $form.find('.subscribe').on('click', payWithStripe);

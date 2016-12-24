@@ -28,13 +28,6 @@ app.service('mainService', function($http, $q) {
        });
     }
 
-    this.getOrder = function(id) {
-        return $http({
-          method: 'GET',
-          url: 'http://localhost:4500/api/orders/' + id
-        });
-    }
-
     this.createOrder = function(order){
        return $http({
          url: 'http://localhost:4500/api/orders/',
@@ -50,6 +43,14 @@ app.service('mainService', function($http, $q) {
          data: bill
        });
     }
+
+    this.getOrder = function(id) {
+        return $http({
+          method: 'GET',
+          url: 'http://localhost:4500/api/orders/' + id
+        })
+      }
+
 
   //   this.create = function(product){
   //     return $http({

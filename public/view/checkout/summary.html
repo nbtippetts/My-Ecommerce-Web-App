@@ -1,17 +1,45 @@
 <div class="confirmation-container">
+
   <div class="order-context">
   <h2>Your order has been place thank you for your purchase.</h2>
   </div>
+  <hr/>
+
   <div class="receipt">
     <h1>Your Receipt</h1>
-    <div class="order-receipt" ng-repeat="order in orders">
-      {{order.order_first_name}}
-
-    </div>
   </div>
+  <hr/>
+
+  <div class="shipping-to">
+
+    <td ng-repeat="order in ordering">
+        <tr ng-repeat-end><h4>Shipping To: {{ordering.order_first_name}}</tr>
+        <tr ng-repeat-end>{{ordering.order_last_name}}</h4></tr>
+
+        <tr ng-repeat-end><h4>Address: {{ordering.order_address}},</tr>
+        <tr ng-repeat-end>{{ordering.order_city}},
+        <tr ng-repeat-end>{{ordering.order_state}},
+        <tr ng-repeat-end>{{ordering.order_zip}},</h4></tr>
+
+        <tr ng-repeat-end><h4>Country: {{ordering.order_country}}</h4></tr>
+    </td>
+
+  </div>
+   <hr/>
+
     <div class="sum">
       <ngcart-cart id="{{product.product_name}}" name="{{product.product_name}}" price="{{product.product_price}}" quantity="1" quantity-max="5"></ngcart-cart>
     </div>
+  </div>
+  <hr/>
+
+<div class="clear-btn">
+  <div class="clear-wid">
+  <clear-Cart-Dir clear="clear">
+    <button class="btn btn-primary" clear="clear" ui-sref="products">Keep Shopping</button>
+  </clear-Cart-Dir>
+</div>
+</div>
 
 <script type="text/ng-template" id="template/ngCart/cart.html">
     <table class="table table-striped cart">

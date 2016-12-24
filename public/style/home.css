@@ -1,0 +1,64 @@
+.home-gallery {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.dropdown {
+  cursor: pointer;
+}
+
+ul #dropdown1 {
+  width: inherit;
+  height: inherit;
+}
+
+ul #dropdown1 li {
+  display: table-cell;
+}
+
+ul #dropdown1 li a {
+  display: flex;
+  letter-spacing: 2px;
+  align-items: center;
+}
+
+
+.navbar-brand {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+ .container-fluid button {
+  float: right;
+  width: 57px;
+  height: 25px;
+  border: none;
+}
+
+
+
+ul .dropdown-menu {
+  width: 140%;
+}
+
+hr {
+    margin:40px 0;
+}
+h3 { color:#1758AA}
+h3 span {font-size:14px; display:block;}
+span[ng-click] {
+        cursor: pointer;
+}
+
+.show-cart {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 5%;
+}
+
+.shop {
+  color: white;
+  float: right;
+  padding-right: 5%;
+}

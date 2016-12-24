@@ -1,0 +1,105 @@
+.details-head {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.get-ski {
+  width: 90%;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.ski-info {
+  display: flex;
+  justify-content: center;
+}
+
+.ski-info ul li {
+  list-style: none;
+}
+
+.ski-info ul li button {
+  height: 40px;
+  width: 120px;
+  color: white;
+  background-color: #008744;
+  border-radius: 5px;
+  border: 2px solid darkgray;
+  border-style: outset;
+}
+
+.get-ski img {
+  float: left;
+  height: 100%;
+  width: 300px;
+  display: flex;
+}
+
+.details {
+  width: 90%;
+  height: 50px;
+  margin: 0 auto;
+  background-color: #333;
+  display: flex;
+  justify-content: space-around;
+}
+
+.details-container {
+  width: 48%;
+  font-size: initial;
+  color: black;
+  padding: 1%;
+}
+
+.details-container h2 {
+  margin-top: 0;
+  color: darkgray;
+}
+
+.specs-info h2 {
+  margin-top: 0;
+  color: darkgray;
+}
+.specs-info {
+  display: flex;
+  flex-direction: column;
+  line-height: normal;
+  letter-spacing: 2px;
+  width: 25%;
+  font-size: initial;
+  color: black;
+  padding: 1%;
+}
+
+.content-wrapper h4 {
+  float: right;
+  margin-top: -60px;
+}
+
+/*********************************************
+    			Call Bootstrap
+*********************************************/
+
+@import url("bootstrap/bootstrap.min.css");
+@import url("bootstrap-override.css");
+@import url("//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css");
+
+/*********************************************
+        		Theme Elements
+*********************************************/
+
+.gold{
+	color: #FFBF00;
+}
+
+.col-md-7 .wishlist button {
+  background-color: #3399ff;
+  border: #287acc;
+}
+
+ .col-md-7 .wishlist button:hover {
+  opacity: 1;
+  background-color: #287acc;
+}

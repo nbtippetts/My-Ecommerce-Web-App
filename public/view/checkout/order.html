@@ -1,0 +1,336 @@
+<div class="checkout-container">
+
+  <div class="order-container">
+    <form class="form-horizontal" name="shippingForm" ng-model="order.orders_bill_ID_fkey" ng-submit="submitForm()" novalidate>
+
+
+  <!-- Form Name -->
+      <legend>Shipping information</legend>
+
+      <!-- Text input-->
+      <div class="form-group">
+        <label class="col-xs-4 .col-md-6 control-label" for="firstname">First name</label>
+        <div class="col-xs-4 .col-md-6">
+        <input id="firstname" name="firstname" type="text" ng-model="order.order_first_name" placeholder="first name" class="form-control input-md" required="$valid">
+
+        </div>
+      </div>
+
+      <!-- Text input-->
+      <div class="form-group">
+        <label class="col-xs-4 .col-md-6 control-label" for="lastname">Last name</label>
+        <div class="col-xs-4 .col-md-6">
+        <input id="lastname" name="lastname" type="text" ng-model="order.order_last_name" placeholder="last name" class="form-control input-md" required="$valid">
+
+        </div>
+      </div>
+
+      <!-- Text input-->
+      <div class="form-group">
+        <label class="col-xs-4 .col-md-6 control-label" for="email">Email</label>
+        <div class="col-xs-4 .col-md-6">
+        <input id="email" name="email" type="text" ng-model="order.order_email" placeholder="email" class="form-control input-md" required="$valid">
+
+        </div>
+      </div>
+
+      <!-- Text input-->
+      <div class="form-group">
+        <label class="col-xs-4 .col-md-6 control-label" for="phone">Phone Number</label>
+        <div class="col-xs-4 .col-md-6">
+        <input id="phone" name="phone" type="text" ng-model="order.order_phone" placeholder="Phone#" class="form-control input-md" required="$valid">
+
+        </div>
+      </div>
+
+      <!-- Text input-->
+      <div class="form-group">
+        <label class="col-xs-4 .col-md-6 control-label" for="address">Address</label>
+        <div class="col-xs-4 .col-md-6">
+        <input id="address" name="address" type="text" ng-model="order.order_address" placeholder="Address" class="form-control input-md" required="$valid">
+
+        </div>
+      </div>
+
+      <!-- Text input-->
+      <div class="form-group">
+        <label class="col-xs-4 .col-md-6 control-label" for="city">City</label>
+        <div class="col-xs-4 .col-md-6">
+        <input id="city" name="city" type="text" ng-model="order.order_city" placeholder="city" class="form-control input-md" required="$valid">
+
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-xs-4 .col-md-6 control-label" for="state">State</label>
+        <div class="col-xs-4 .col-md-6">
+        <input id="state" name="state" type="text" ng-model="order.order_state" placeholder="State" class="form-control input-md">
+
+        </div>
+      </div>
+
+      <!-- Text input-->
+      <div class="form-group">
+        <label class="col-xs-4 .col-md-6 control-label" for="zip">Zip Code</label>
+        <div class="col-xs-4 .col-md-6">
+        <input id="zip" name="zip" type="text" ng-model="order.order_zip" placeholder="Zip Code" class="form-control input-md" required="$valid">
+
+        </div>
+      </div>
+
+      <!-- Text input-->
+      <div class="form-group">
+        <label class="col-xs-4 .col-md-6 control-label" for="country">Country</label>
+        <div class="col-xs-4 .col-md-6">
+        <input id="country" name="country" type="text" ng-model="order.order_country" placeholder="Country" class="form-control input-md" required="$valid">
+
+        </div>
+      </div>
+
+      <div class="checkbox">
+          <billing-Dir checkbox="checkbox">
+             <label><input type="checkbox" value="">Use same address for billing</label>
+          </billing-Dir>
+      </div>
+
+    </form>
+  </div>
+
+
+ <div class="billing-container">
+    <form class="form-horizontal" ng-model="bill.bills_order_ID_fkey">
+
+      <legend>Billing information</legend>
+
+
+      <div class="form-group">
+        <label class="col-xs-4 .col-md-6 control-label" for="firstname">First name</label>
+        <div class="col-xs-4 .col-md-6">
+        <input id="firstname" name="firstname" type="text" ng-model="bill.bill_first_name" placeholder="first name" class="form-control input-md" required="$valid">
+
+        </div>
+      </div>
+
+
+      <div class="form-group">
+        <label class="col-xs-4 .col-md-6 control-label" for="lastname">Last name</label>
+        <div class="col-xs-4 .col-md-6">
+        <input id="lastname" name="lastname" type="text" ng-model="bill.bill_last_name" placeholder="last name" class="form-control input-md" required="$valid">
+
+        </div>
+      </div>
+
+
+      <div class="form-group">
+        <label class="col-xs-4 .col-md-6 control-label" for="email">Email</label>
+        <div class="col-xs-4 .col-md-6">
+        <input id="email" name="email" type="text" ng-model="bill.bill_email" placeholder="email" class="form-control input-md" required="$valid">
+
+        </div>
+      </div>
+
+
+      <div class="form-group">
+        <label class="col-xs-4 .col-md-6 control-label" for="phone">Phone Number</label>
+        <div class="col-xs-4 .col-md-6">
+        <input id="phone" name="phone" type="text" ng-model="bill.bill_phone" placeholder="Phone#" class="form-control input-md" required="$valid">
+
+        </div>
+      </div>
+
+
+      <div class="form-group">
+        <label class="col-xs-4 .col-md-6 control-label" for="address">Address</label>
+        <div class="col-xs-4 .col-md-6">
+        <input id="address" name="address" type="text" ng-model="bill.bill_address" placeholder="Address" class="form-control input-md" required="$valid">
+
+        </div>
+      </div>
+
+
+      <div class="form-group">
+        <label class="col-xs-4 .col-md-6 control-label" for="city">City</label>
+        <div class="col-xs-4 .col-md-6">
+        <input id="city" name="city" type="text" ng-model="bill.bill_city" placeholder="city" class="form-control input-md" required="$valid">
+
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-xs-4 .col-md-6 control-label" for="state">State</label>
+        <div class="col-xs-4 .col-md-6">
+        <input id="state" name="state" type="text" ng-model="bill.bill_state" placeholder="State" class="form-control input-md">
+
+        </div>
+      </div>
+
+
+      <div class="form-group">
+        <label class="col-xs-4 .col-md-6 control-label" for="zip">Zip Code</label>
+        <div class="col-xs-4 .col-md-6">
+        <input id="zip" name="zip" type="text" ng-model="bill.bill_zip" placeholder="Zip Code" class="form-control input-md" required="$valid">
+
+        </div>
+      </div>
+
+
+      <div class="form-group">
+        <label class="col-xs-4 .col-md-6 control-label" for="country">Country</label>
+        <div class="col-xs-4 .col-md-6">
+        <input id="country" name="country" type="text" ng-model="bill.bill_country" placeholder="Country" class="form-control input-md" required="$valid">
+
+        </div>
+      </div>
+
+    </form>
+  </div>
+  </div>
+
+
+        <div class="payment-container">
+              <!-- CREDIT CARD FORM STARTS HERE -->
+              <div class="panel panel-default credit-card-box">
+                  <div class="panel-heading display-table" >
+                      <div class="row display-tr" >
+                          <h3 class="panel-title display-td">Not real Payment</h3>
+                          <div class="display-td" >
+                              <img class="img-responsive pull-right" src="http://i76.imgup.net/accepted_c22e0.png">
+                          </div>
+                      </div>
+                  </div>
+                  <div class="panel-body">
+                      <form role="form" id="payment-form" method="POST" action="javascript:void(0);">
+                          <div class="row">
+                              <div class="col-xs-12">
+                                  <div class="form-group">
+                                      <label for="cardNumber">CARD NUMBER</label>
+                                      <div class="input-group">
+                                          <input
+                                              type="tel"
+                                              class="form-control"
+                                              name="cardNumber"
+                                              placeholder="Valid Card Number"
+                                              autocomplete="cc-number"
+                                              required autofocus
+                                          />
+                                          <span class="input-group-addon"><i class="fa fa-credit-card"></i></span>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="row">
+                              <div class="col-xs-7 col-md-7">
+                                  <div class="form-group">
+                                      <label for="cardExpiry"><span class="hidden-xs">EXPIRATION</span><span class="visible-xs-inline">EXP</span> DATE</label>
+                                      <input
+                                          type="tel"
+                                          class="form-control"
+                                          name="cardExpiry"
+                                          placeholder="MM / YY"
+                                          autocomplete="cc-exp"
+                                          required
+                                      />
+                                  </div>
+                              </div>
+                              <div class="col-xs-5 col-md-5 pull-right">
+                                  <div class="form-group">
+                                      <label for="cardCVC">CV CODE</label>
+                                      <input
+                                          type="tel"
+                                          class="form-control"
+                                          name="cardCVC"
+                                          placeholder="CVC"
+                                          autocomplete="cc-csc"
+                                          required
+                                      />
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="row">
+                              <div class="col-xs-12">
+                                  <div class="form-group">
+                                      <label for="couponCode">COUPON CODE</label>
+                                      <input type="text" class="form-control" name="couponCode" />
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="row">
+                              <div class="col-xs-12">
+                                  <button ui-sref="summary" ng-disabled="shippingForm.$invalid" ng-click="createOrder(order); createBill(bill)" class="btn btn-primary">Place Order</button>
+                              </div>
+                          </div>
+                          <div class="row" style="display:none;">
+                              <div class="col-xs-12">
+                                  <p class="payment-errors"></p>
+                              </div>
+                          </div>
+                      </form>
+                  </div>
+              </div>
+            </div>
+
+
+    <div class="sum">
+    <ngcart-cart id="{{product.product_name}}" name="{{product.product_name}}" price="{{product.product_price}}" quantity="1" quantity-max="5"></ngcart-cart>
+    </div>
+
+    <script type="text/ng-template" id="template/ngCart/cart.html">
+    <div class="alert alert-warning" role="alert" ng-show="ngCart.getTotalItems() === 0">
+        Your cart is empty
+    </div>
+
+    <div class="table-responsive col-lg-12" ng-show="ngCart.getTotalItems() > 0">
+
+        <table class="table table-striped ngCart cart">
+
+            <thead>
+            <tr>
+                <th></th>
+                <th></th>
+                <th>Quantity</th>
+                <th>Amount</th>
+                <th>Total</th>
+            </tr>
+            </thead>
+            <tfoot>
+            <tr ng-show="ngCart.getTax()">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>Tax ({{ ngCart.getTaxRate() }}%):</td>
+                <td>{{ ngCart.getTax() | currency }}</td>
+            </tr>
+            <tr ng-show="ngCart.getShipping()">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>Shipping:</td>
+                <td>{{ ngCart.getShipping() | currency }}</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>Total:</td>
+                <td>{{ ngCart.totalCost() | currency }}</td>
+            </tr>
+            </tfoot>
+            <tbody>
+            <tr ng-repeat="item in ngCart.getCart().items track by $index">
+                <td><span ng-click="ngCart.removeItemById(item.getId())" class="glyphicon glyphicon-remove"></span></td>
+
+                <td>{{ item.getName() }}</td>
+                <td><span class="glyphicon glyphicon-minus" ng-class="{'disabled':item.getQuantity()==1}"
+                          ng-click="item.setQuantity(-1, true)"></span>&nbsp;&nbsp;
+                    {{ item.getQuantity() | number }}&nbsp;&nbsp;
+                    <span class="glyphicon glyphicon-plus" ng-click="item.setQuantity(1, true)"></span></td>
+                <td>{{ item.getPrice() | currency}}</td>
+                <td>{{ item.getTotal() | currency }}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    </script>
+
+              <!-- CREDIT CARD FORM ENDS HERE -->

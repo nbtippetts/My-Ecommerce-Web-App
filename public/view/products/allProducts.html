@@ -1,0 +1,9 @@
+<div class="skis-container">
+  <div class="skis-wrapper" ng-repeat="product in products">
+     <img class="productImage" ng-src="{{product.product_image_url}}"/>
+     <ul>
+      <li><h3  ui-sref="product({id: {{product.product_id}}})">{{product.product_name}}</h3></li>
+      <li><h4>${{product.product_price}}</h4></li>
+    </ul>
+  </div>
+</div>

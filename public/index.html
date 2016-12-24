@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="lifted">
+  <head>
+    <meta charset="utf-8">
+    <title>Lifted Skiing</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+    <link rel="stylesheet" href="./style/cart.css">
+    <link rel="stylesheet" href="./style/home.css">
+    <link rel="stylesheet" href="./style/product.css">
+    <link rel="stylesheet" href="./style/payment.css">
+  </head>
+  <body>
+
+    <section class="header">
+       <nav class="navbar navbar-inverse">
+         <div class="container-fluid">
+
+           <div class="navbar-header">
+             <a class="navbar-brand" ui-sref="home"><h2>LIFTED SKI.co</h2></a>
+           </div>
+
+           <ul class="nav navbar-nav">
+             <li class="active"><a ui-sref="home">LIFTED</a></li>
+
+             <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown"><h5>SKIS & GEAR</h5> <span class="caret"></span></a>
+               <ul class="dropdown-menu" id="dropdown1">
+                <li><a ui-sref="products"><h1>SHOP</h1> <img src="http://us.123rf.com/450wm/miceking/miceking1506/miceking150602616/41477596-skis-snowflakes-croises.jpg" alt="ski image" height="80px" width="50px"/></a></li>
+                 <li><a ui-sref="video"><h1>VIDEOS</h1>  <img src="http://marienthal.snj.lu/sites/default/files/plainicon.com-46501-256px-930_0.png" alt="video icon" height="50px" width="50px" /></a></li>
+               </ul>
+             </li>
+
+              <li><a ui-sref="team"><h4>The Team</h4></a></li>
+
+              <!-- here we get the logout url from our server to run the logout function  -->
+             </ul>
+             <!-- <a href="/auth/logout"><button style="background-color: #333">Logout</button></a> -->
+             <div class="show-cart"><a ui-sref="cart"><img src="../img/cart.png" alt="Shopping cart"/></a></div>
+
+               <ngcart-summary></ngcart-summary>
+               <script type="text/ng-template" id="template/ngCart/summary.html">
+                 <div class="row">
+                   <div class="shop">{{ ngCart.getTotalItems() }}
+                       <ng-pluralize count="ngCart.getTotalItems()" when="{1: 'item', 'other':'items'}"></ng-pluralize>
+                       <br />{{ ngCart.totalCost() | currency }}
+                   </div>
+                 </div>
+              </script>
+           </div>
+        </nav>
+      </section>
+
+
+
+      <!-- <footer class="footer1">
+      <div class="footer">
+           <div class="container">
+               <div class="row">
+                 <div class="col-xs-12">
+                   <p><h3 style="color: white; text-align: center">GET IN TOUCH</h3></p>
+                   <p><h4 style="color: white; text-align: center">6183 S 1550 E South Ogden, UT</h4></p>
+                   <p><h4 style="color: white; text-align: center">385-238-9734</h4></p>
+                   <p><h5 style="color: white; text-align: center"><a href="mailto:nbtippetts@gmail.com">nbtippetts@gmail.com</a></h5></p>
+                       <ul class="social">
+                           <li><a href="https://www.facebook.com/noah.tippetts.3"><i class="fa fa-facebook"></i></a></li>
+                           <li><a href="https://www.instagram.com/noha_trippetts/"><i class="fa fa-instagram"></i></a></li>
+                           <li><a href="https://github.com/nbtippetts"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+                           <li><a href="https://www.linkedin.com/in/noah-tippetts-614418130"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                       </ul>
+                   </div>
+                 </div>
+          </div>
+      </div>
+    </footer> -->
+
+
+
+        <ui-view></ui-view>
+
+        <script src="./bower_components/angular/angular.js"></script>
+        <script src="./bower_components/ngcart/dist/ngCart.js"></script>
+
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
+       <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.13.1/jquery.validate.min.js"></script>
+       <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.payment/1.2.3/jquery.payment.min.js"></script>
+       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+       <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script> -->
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.min.js"></script>
+       <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular-route.js"></script>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/js/materialize.js"></script>
+       <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.js"></script>
+
+       <script src="../js/app.js"></script>
+       <script src="../js/services/mainService.js"></script>
+       <script src="../js/controllers/allProductsCtrl.js"></script>
+      <script src="../js/controllers/oneProductCtrl.js"></script>
+      <script src="../js/controllers/cartCtrl.js"></script>
+      <script src="../js/controllers/orders.js"></script>
+      <script src="../js/controllers/summaryCtrl.js"></script>
+      <script src="../js/controllers/paymentCtrl.js"></script>
+      <script src="../js/directives/billingDir.js"></script>
+
+  </body>
+</html>

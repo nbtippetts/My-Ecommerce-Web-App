@@ -1,0 +1,60 @@
+<div class="container1-fluid">
+  <div class="content-wrapper">
+    <h2>FOR FRODO</h2>
+    <h4 ui-sref="products">Back to store</h4>
+    <br />
+    <h1>{{product.product_name}}</h1>
+		<div class="item-container">
+			<div class="product-container">
+				<div class="col-md-6">
+						<img class="img-responsive" ng-src="{{product.product_image_url}}" style="height: 700px; padding-top: 5%" />
+				</div>
+
+				<div class="col-md-7">
+					<h3>{{product.product_description}}</h3>
+          <h2>${{product.product_price}}</h2>
+					<div class="product-rating"><i class="fa fa-star gold"></i> <i class="fa fa-star gold"></i> <i class="fa fa-star gold"></i> <i class="fa fa-star gold"></i> <i class="fa fa-star-o"></i> </div>
+					<hr>
+					<div class="product-stock">In Stock</div>
+					<hr>
+					<div class="btn-group cart">
+            <ngcart-addtocart id="{{product.product_name}}" name="{{product.product_name}}" price="{{product.product_price}}" quantity="1" quantity-max="5">Add to Cart</ngcart-addtocart>
+					</div>
+          <br/>
+          <div class="movie"><iframe width="500" height="300" src="https://www.youtube.com/embed/vDDRM90_rq4" frameborder="0" allowfullscreen></iframe></div>
+				</div>
+			</div>
+		</div>
+  </div>
+</div>
+
+<div class="details">
+  <div class="details-container">
+    <h2>Details</h2>
+    {{product.product_details}}
+    </div>
+    <div class="specs-info">
+      <h2>SPECS:</h2>
+      {{product.product_specs}}
+    </div>
+</div>
+
+<script type="text/ng-template" id="template/ngCart/addtocart.html"><div ng-hide="attrs.id">
+    <a class="btn btn-lg btn-primary" ng-disabled="true" ng-transclude></a>
+
+</div>
+<div ng-show="attrs.id">
+    <div>
+        <span ng-show="quantityMax">
+            <select name="quantity" id="quantity" ng-model="q"
+                    ng-options=" v for v in qtyOpt"></select>
+        </span>
+        <a class="btn btn-sm btn-primary"
+           ng-click="ngCart.addItem(id, name, price, q, data)"
+           ng-transclude></a>
+    </div>
+    <mark  ng-show="inCart()">
+        This item is in your cart. <a ng-click="ngCart.removeItemById(id)" style="cursor: pointer;">Remove</a>
+    </mark>
+</div>
+</script>

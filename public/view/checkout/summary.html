@@ -1,0 +1,29 @@
+<div class="confirmation-container">
+  <div class="order-context">
+  <h2>Your order has been place thank you for your purchase.</h2>
+  </div>
+  <div class="receipt">
+    <h1>Your Receipt</h1>
+    <div class="order-receipt" ng-repeat="order in orders">
+      {{order.order_first_name}}
+
+    </div>
+  </div>
+    <div class="sum">
+      <ngcart-cart id="{{product.product_name}}" name="{{product.product_name}}" price="{{product.product_price}}" quantity="1" quantity-max="5"></ngcart-cart>
+    </div>
+
+<script type="text/ng-template" id="template/ngCart/cart.html">
+    <table class="table table-striped cart">
+      <tbody>
+        <tr ng-repeat="item in ngCart.getCart().items track by $index">
+          <td><h2>Product</h2> {{ item.getName() }}</td>
+          <td><h2>Quantity</h2> {{ item.getQuantity() | number }}</td>
+          <td><h2>Total</h2>{{ item.getTotal() | currency }}</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <td><h2>Total Cost</h2> {{ ngCart.totalCost() | currency }}</td>
+      </tfoot>
+   </table>
+</script>

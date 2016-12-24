@@ -1,0 +1,126 @@
+.CartForm {
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.show-cart img {
+  height: 30px;
+  width: 35px;
+}
+
+
+/*********************************************
+					PRODUCTS
+*********************************************/
+
+.product{
+	border: 1px solid #dddddd;
+	height: 321px;
+}
+
+.product>img{
+	max-width: 230px;
+  float: left;
+}
+
+.product-rating{
+	font-size: 20px;
+	margin-bottom: 25px;
+}
+
+.product-price{
+	font-size: 22px;
+}
+
+.product-stock{
+	color: #00ff00;
+	font-size: 30px;
+	margin-top: 10px;
+}
+
+.product-info{
+		margin-top: 50px;
+}
+
+/*********************************************
+					VIEW
+*********************************************/
+
+.content-wrapper {
+	margin: 0 auto;
+	margin-top: 25px;
+	margin-bottom: 10px;
+	border: 0px;
+	border-radius: 0px;
+  width: 90%;
+}
+
+.container1-fluid{
+	margin: 0 auto;
+  width: 100%;
+}
+
+.view-wrapper {
+	float: right;
+	max-width: 70%;
+	margin-top: 25px;
+}
+
+.product-container {
+  display: flex;
+  align-items: flex-start;
+}
+
+.movie {
+  margin-top: 10%;
+}
+
+/*********************************************
+				ITEM
+*********************************************/
+
+
+.skis-container {
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+.skis-wrapper {
+  border: 3px solid #e7eff6;
+  border-style: outset;
+  width: 230px;
+}
+
+.skis-wrapper img {
+  height: 500px;
+  width: inherit;
+}
+
+.skis-wrapper ul {
+    padding: 0;
+    padding-bottom: 7%;
+    position: relative;
+    border: 4px solid #63ace5;
+    border-radius: 10px;
+    border-top-style: outset;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+    cursor: pointer;
+}
+
+.skis-wrapper ul li {
+  list-style: none;
+  text-align: center;
+  color: white;
+}
+
+.skis-wrapper ul li h3:hover {
+  color: #63ace5;
+  list-style: none;
+  text-align: center;
+}

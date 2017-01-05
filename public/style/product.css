@@ -78,28 +78,6 @@
   margin-top: -60px;
 }
 
-/*********************************************
-    			Call Bootstrap
-*********************************************/
-
-@import url("bootstrap/bootstrap.min.css");
-@import url("bootstrap-override.css");
-@import url("//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css");
-
-/*********************************************
-        		Theme Elements
-*********************************************/
-
-.gold{
-	color: #FFBF00;
-}
-
-.col-md-7 .wishlist button {
-  background-color: #3399ff;
-  border: #287acc;
-}
-
- .col-md-7 .wishlist button:hover {
-  opacity: 1;
-  background-color: #287acc;
+.product-btn {
+  float: right;
 }

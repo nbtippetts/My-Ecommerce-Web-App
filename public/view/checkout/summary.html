@@ -6,16 +6,15 @@
   <hr/>
 
   <div class="receipt">
-    <h1>Your Receipt</h1>
+    <h1>Order Comfirmation</h1>
   </div>
-  <hr/>
 
   <div class="shipping-to">
 
     <td ng-repeat="order in ordering">
+        <tr ng-repeat-end><h4>Order ID: #{{ordering.order_id}}</h4></tr>
         <tr ng-repeat-end><h4>Shipping To: {{ordering.order_first_name}}</tr>
         <tr ng-repeat-end>{{ordering.order_last_name}}</h4></tr>
-
         <tr ng-repeat-end><h4>Address: {{ordering.order_address}},</tr>
         <tr ng-repeat-end>{{ordering.order_city}},
         <tr ng-repeat-end>{{ordering.order_state}},
@@ -26,6 +25,10 @@
 
   </div>
    <hr/>
+
+   <div class="receipt">
+     <h1>Your Receipt</h1>
+   </div>
 
     <div class="sum">
       <ngcart-cart id="{{product.product_name}}" name="{{product.product_name}}" price="{{product.product_price}}" quantity="1" quantity-max="5"></ngcart-cart>
@@ -38,20 +41,20 @@
   <clear-Cart-Dir clear="clear">
     <button class="btn btn-primary" clear="clear" ui-sref="products">Keep Shopping</button>
   </clear-Cart-Dir>
-</div>
+ </div>
 </div>
 
 <script type="text/ng-template" id="template/ngCart/cart.html">
     <table class="table table-striped cart">
       <tbody>
         <tr ng-repeat="item in ngCart.getCart().items track by $index">
-          <td><h2>Product</h2> {{ item.getName() }}</td>
-          <td><h2>Quantity</h2> {{ item.getQuantity() | number }}</td>
-          <td><h2>Total</h2>{{ item.getTotal() | currency }}</td>
+          <td><h2>Product</h2> <h4>{{ item.getName() }}</h4></td>
+          <td><h2>Quantity</h2> <h4>{{ item.getQuantity() | number }}</h4></td>
+          <td><h2>Total</h2> <h4>{{ item.getTotal() | currency }}</h4></td>
         </tr>
       </tbody>
       <tfoot>
-        <td><h2>Total Cost</h2> {{ ngCart.totalCost() | currency }}</td>
+        <td><h2>Total Cost</h2> <h4>{{ ngCart.totalCost() | currency }}</h4></td>
       </tfoot>
    </table>
 </script>

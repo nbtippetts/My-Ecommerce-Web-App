@@ -1,8 +1,3 @@
-.home-gallery {
-  width: 80%;
-  margin: 0 auto;
-}
-
 .dropdown {
   cursor: pointer;
 }
@@ -67,4 +62,48 @@ span[ng-click] {
   color: white;
   float: right;
   padding-right: 5%;
+}
+/*
+.slide.ng-hide-add,
+.slide.ng-hide-remove {
+  -webkit-transition: all linear 1.5s;
+  -moz-transition: all linear 1.5s;
+  -o-transition: all linear 1.5s;
+  transition: all linear 1.5s;
+  display: block!important;
+}
+.slide.ng-hide-add.ng-hide-add-active,
+.slide.ng-hide-remove {
+  opacity: 0;
+}
+.slide.ng-hide-add,
+.slide.ng-hide-remove.ng-hide-remove-active {
+  opacity: 1;
+}
+
+* {
+  font-family: 'Open Sans', sans-serif;
+}
+.center-grey {
+  background: #f2f2f2;
+}
+
+.slider {
+  position: relative;
+    width: 80%;
+    height: 100%;
+  margin: 0 auto;
+}
+
+.slide {
+  position: absolute;
+  box-shadow: 0px 0px 15px #999;
+}*/
+
+.home-container {
+    padding-bottom: 56.25%;
+    height: 0;
+    width: 90%;
+    margin: 0 auto;
+    overflow: hidden;
 }

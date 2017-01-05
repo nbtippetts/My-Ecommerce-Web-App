@@ -1,4 +1,4 @@
-var app = angular.module('lifted', ['ngRoute', 'ui.router', 'ngAnimate', 'ngCart'])  //ui.router is awesome
+var app = angular.module('lifted', ['ngRoute', 'ui.router', 'ngAnimate', 'ngCart']) //ui.router is awesome
 
 
   app.config(function ($stateProvider, $urlRouterProvider) {
@@ -8,7 +8,7 @@ var app = angular.module('lifted', ['ngRoute', 'ui.router', 'ngAnimate', 'ngCart
         .state('home', {
           url: '/',
           templateUrl: '../view/home.html',
-          controller: 'oneProductCtrl'
+          controller: 'slideShowCtrl'
         })
 
         .state('products', {

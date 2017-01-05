@@ -18,6 +18,5 @@ console.log('this is cart', ngCart);
        })
      }
 
-    //$scope.createOrder();
 
  })

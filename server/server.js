@@ -6,7 +6,7 @@ var express = require('express'),
     config = require('./config.js'),
     //passport = require('passport'),
     massive = require('massive'),
-    connectionString = "postgres://postgres:otb4life@localhost/skiCo";
+    connectionString = "postgres://postgres:otb4life@localhost/betty";
 
 
     var app = module.exports = express();

@@ -1,0 +1,7 @@
+{
+  "name": "Lifted",
+  "description": "A barebones Node.js app using Expressjs",
+  "repository": "https://github.com/nbtippetts/My-Ecommerce-Web-App.git",
+  "keywords": ["node", "express", "static"],
+  "image": "heroku/nodejs"
+}

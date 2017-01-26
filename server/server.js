@@ -41,7 +41,8 @@ var express = require('express'),
      app.set('db', massiveServer);
      //connecting server to db folder and postgres database
 
-      var db = app.get('/db', function (request, response) {
+
+     var db = app.get('db', function (request, response) {
        pg.connect(process.env.DATABASE_URL, function(err, client, done) {
          client.query('SELECT * FROM test_table', function(err, result) {
            done();
@@ -53,6 +54,7 @@ var express = require('express'),
        });
      });
 
+
      app.get('/times', function(request, response) {
          var result = ''
          var times = process.env.TIMES || 5
@@ -60,7 +62,6 @@ var express = require('express'),
            result += i + ' ';
        response.send(result);
      });
-
 
      var productCtrl = require('./controllers/productCtrl'),
          adminCtrl = require('./controllers/adminCtrl'),

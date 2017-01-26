@@ -38,21 +38,10 @@ var express = require('express'),
 
     var massiveServer = massive.connectSync({connectionString: connectionString});
 
-    //use initialize passport and passport session for A
      app.set('db', massiveServer);
      //connecting server to db folder and postgres database
 
-     var db = app.get('db');
-
-     app.get('/times', function(request, response) {
-         var result = ''
-         var times = process.env.TIMES || 5
-         for (i=0; i < times; i++)
-           result += i + ' ';
-       response.send(result);
-     });
-
-     app.get(db, function (request, response) {
+      var db = app.get('/db', function (request, response) {
        pg.connect(process.env.DATABASE_URL, function(err, client, done) {
          client.query('SELECT * FROM test_table', function(err, result) {
            done();
@@ -62,6 +51,14 @@ var express = require('express'),
             { response.render('pages/db', {results: result.rows} ); }
          });
        });
+     });
+
+     app.get('/times', function(request, response) {
+         var result = ''
+         var times = process.env.TIMES || 5
+         for (i=0; i < times; i++)
+           result += i + ' ';
+       response.send(result);
      });
 
 

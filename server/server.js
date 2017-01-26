@@ -4,6 +4,7 @@ var express = require('express'),
     session = require('express-session'),
     cors = require('cors'),
     config = require('./config.js'),
+    pg = require('pg'),
     //passport = require('passport'),
     massive = require('massive'),
     connectionString = "postgres://postgres:otb4life@localhost/betty";
@@ -11,6 +12,8 @@ var express = require('express'),
 
     var app = module.exports = express();
     //exporting express to files
+
+    app.set('port', (process.env.PORT || 4500));
 
     var corsOptions = {
        origin: 'http://localhost:4500',
@@ -40,6 +43,26 @@ var express = require('express'),
      //connecting server to db folder and postgres database
 
      var db = app.get('db');
+
+     app.get('/times', function(request, response) {
+         var result = ''
+         var times = process.env.TIMES || 5
+         for (i=0; i < times; i++)
+           result += i + ' ';
+       response.send(result);
+     });
+
+     app.get(db, function (request, response) {
+       pg.connect(process.env.DATABASE_URL, function(err, client, done) {
+         client.query('SELECT * FROM test_table', function(err, result) {
+           done();
+           if (err)
+            { console.error(err); response.send("Error " + err); }
+           else
+            { response.render('pages/db', {results: result.rows} ); }
+         });
+       });
+     });
 
 
      var productCtrl = require('./controllers/productCtrl'),
@@ -97,7 +120,6 @@ var express = require('express'),
       app.delete('/api/customers', customerCtrl.deleteCustomer);
 
 
-     var port = 4500;
-     app.listen(port, function(){
-       console.log('send it', port);
-     })
+      app.listen(app.get('port'), function() {
+        console.log('Node app is running on port', app.get('port'));
+      });

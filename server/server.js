@@ -6,8 +6,8 @@ var express = require('express'),
     pg = require('pg'),
     config = require('./config.js'),
     //passport = require('passport'),
-    //massive = require('massive'),
-    //connectionString = "postgres://postgres:otb4life@localhost/betty";
+    massive = require('massive'),
+    connectionString = "postgres://postgres:otb4life@localhost/betty";
 
 
     var app = module.exports = express();
@@ -34,26 +34,34 @@ var express = require('express'),
     app.use(express.static(__dirname + './../public'));
 
 
-    pg.defaults.ssl = true;
-    pg.connect(process.env.DATABASE_URL, function(err, client) {
-      if (err) throw err;
-      console.log('Connected to postgres! Getting schemas...');
-
-      client
-        .query('SELECT *, FROM products;')
-        .on('row', function(row) {
-          console.log(JSON.stringify(row));
-        });
-    });
-
-
-    // var massiveServer = massive.connectSync({connectionString: connectionString});
+    // pg.defaults.ssl = true;
+    // pg.connect(process.env.DATABASE_URL, function(err, client) {
+    //   if (err) throw err;
+    //   console.log('Connected to postgres! Getting schemas...');
     //
-    // //use initialize passport and passport session for A
-    //  app.set('db', massiveServer);
-    //  //connecting server to db folder and postgres database
+    //   client
+    //     .query('SELECT *, FROM products;')
+    //     .on('row', function(row) {
+    //       console.log(JSON.stringify(row));
+    //     });
+    // });
+
+
+    var massiveServer = massive.connectSync({connectionString: connectionString});
+
+    //use initialize passport and passport session for A
+     app.set('db', massiveServer);
+     //connecting server to db folder and postgres database
+
+    //  app.get('db', process.env.DATABASE_URL);
     //
-     var db = app.get('db', process.env.DATABASE_URL);
+    //  app.get('/times', function(request, response) {
+    //     var result = ''
+    //     var times = process.env.TIMES || 5
+    //     for (i=0; i < times; i++)
+    //       result += i + ' ';
+    //   response.send(result);
+    // });
 
      var productCtrl = require('./controllers/productCtrl'),
          adminCtrl = require('./controllers/adminCtrl'),

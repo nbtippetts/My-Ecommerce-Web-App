@@ -3,17 +3,15 @@ var express = require('express'),
     cookieParser = require('cookie-parser'),
     session = require('express-session'),
     cors = require('cors'),
-    config = require('./config.js'),
     pg = require('pg'),
+    config = require('./config.js'),
     //passport = require('passport'),
-    massive = require('massive'),
-    connectionString = "postgres://postgres:otb4life@localhost/betty";
+    //massive = require('massive'),
+    //connectionString = "postgres://postgres:otb4life@localhost/betty";
 
 
     var app = module.exports = express();
     //exporting express to files
-
-    app.set('port', (process.env.PORT || 4500));
 
     var corsOptions = {
        origin: 'http://localhost:4500',
@@ -36,32 +34,27 @@ var express = require('express'),
     app.use(express.static(__dirname + './../public'));
 
 
-    var massiveServer = massive.connectSync({connectionString: connectionString});
+    pg.defaults.ssl = true;
+    pg.connect(process.env.DATABASE_URL, function(err, client) {
+      if (err) throw err;
+      console.log('Connected to postgres! Getting schemas...');
 
-     app.set('db', massiveServer);
-     //connecting server to db folder and postgres database
-
-
-     var db = app.get('db', function (request, response) {
-       pg.connect(process.env.DATABASE_URL, function(err, client, done) {
-         client.query('SELECT * FROM test_table', function(err, result) {
-           done();
-           if (err)
-            { console.error(err); response.send("Error " + err); }
-           else
-            { response.render('pages/db', {results: result.rows} ); }
-         });
-       });
-     });
+      client
+        .query('SELECT *, FROM products;')
+        .on('row', function(row) {
+          console.log(JSON.stringify(row));
+        });
+    });
 
 
-     app.get('/times', function(request, response) {
-         var result = ''
-         var times = process.env.TIMES || 5
-         for (i=0; i < times; i++)
-           result += i + ' ';
-       response.send(result);
-     });
+    // var massiveServer = massive.connectSync({connectionString: connectionString});
+    //
+    // //use initialize passport and passport session for A
+    //  app.set('db', massiveServer);
+    //  //connecting server to db folder and postgres database
+    //
+    //  var db = app.get('db');
+
 
      var productCtrl = require('./controllers/productCtrl'),
          adminCtrl = require('./controllers/adminCtrl'),
@@ -117,7 +110,11 @@ var express = require('express'),
       app.delete('/api/products/:id', productCtrl.deleteProduct);
       app.delete('/api/customers', customerCtrl.deleteCustomer);
 
-
-      app.listen(app.get('port'), function() {
-        console.log('Node app is running on port', app.get('port'));
-      });
+      // git add .
+      // git commit -m "Demo"
+      // git push heroku master
+      // heroku open cool
+     var port = 4500;
+     app.listen(port, function(){
+       console.log('send it', port);
+     })

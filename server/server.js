@@ -53,8 +53,7 @@ var express = require('express'),
     //  app.set('db', massiveServer);
     //  //connecting server to db folder and postgres database
     //
-    //  var db = app.get('db');
-
+     var db = app.get('db', process.env.DATABASE_URL);
 
      var productCtrl = require('./controllers/productCtrl'),
          adminCtrl = require('./controllers/adminCtrl'),

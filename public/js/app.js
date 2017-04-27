@@ -6,50 +6,55 @@ var app = angular.module('lifted', ['ngRoute', 'ui.router', 'ngAnimate', 'ngCart
 
     $stateProvider
         .state('home', {
-          url: '/',
-          templateUrl: '../view/home.html',
-          controller: 'slideShowCtrl'
+          url: '/home',
+          templateUrl: './view/home.html'
+        })
+
+        .state('page', {
+          url: '/page',
+          templateUrl: './view/page.html'
+        })
+
+        .state('login', {
+          url: '/login',
+          templateUrl: './view/login.html'
         })
 
         .state('products', {
           url: '/products',
-          templateUrl: '../view/products/allProducts.html',
+          templateUrl: './view/products/allProducts.html',
           controller: 'allProductsCtrl'
         })
 
         .state('product', {
           url: '/products/:id',
-          templateUrl: '../view/products/oneProduct.html',
+          templateUrl: './view/products/oneProduct.html',
           controller: 'oneProductCtrl'
         })
 
         .state('cart', {
           url: '/cart/id',
-          templateUrl: '../view/cart.html',
+          templateUrl: './view/cart.html',
           controller: 'cartCtrl'
         })
 
         .state('orders', {
           url: '/orders',
-          templateUrl: '../view/checkout/order.html',
+          templateUrl: './view/checkout/order.html',
           controller: 'orderCtrl'
         })
 
         .state('order', {
           url: '/orders/:id',
-          templateUrl: '../view/checkout/summary.html',
+          templateUrl: './view/checkout/summary.html',
           controller: 'summaryCtrl'
         })
 
         .state('payment', {
           url: '/payment',
-          templateUrl: '../view/checkout/payment.html',
+          templateUrl: './view/checkout/payment.html',
           //controller: 'paymentCtrl'
         })
-
-
-
-
 
         // .state('team', {
         //   url: '/team',
@@ -68,11 +73,8 @@ var app = angular.module('lifted', ['ngRoute', 'ui.router', 'ngAnimate', 'ngCart
         //   templateUrl: '../view/video.html'
         // })
 
-
-
-
          $urlRouterProvider
-           .otherwise('/');
+           .otherwise('/home');
 
 
     });

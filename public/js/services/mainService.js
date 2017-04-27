@@ -51,65 +51,60 @@ app.service('mainService', function($http, $q) {
         })
       }
 
-
-  //   this.create = function(product){
-  //     return $http({
-  //       url: '/api/product',
-  //       method: 'POST',
-  //       data: product
-  //     });
-  //  }
-
-
+    this.create = function(product){
+      return $http({
+        url: '/api/product',
+        method: 'POST',
+        data: product
+      });
+   }
 
   //this service holds all of the http call to the server for now
-  // this.register = function(user) {
-  //   console.log(user);
-  //   return $http({
-  //     method: 'POST',
-  //     url: '/auth/local/register',
-  //     data: user
-  //   })
-  // }
-  //
-  //
-  // this.loginUser = function(user) {
-  //   return $http({
-  //     method: 'POST',
-  //     url: '/auth/local',
-  //     data: user
-  //   })
-  // }
+  this.register = function(user) {
+    console.log(user);
+    return $http({
+      method: 'POST',
+      url: '/auth/local/register',
+      data: user
+    })
+  }
 
+  this.loginUser = function(user) {
+    return $http({
+      method: 'POST',
+      url: '/login',
+      data: user
+    })
+  }
 
-  // this.logout = function() {
-  //   return $http({
-  //     method: 'GET',
-  //     url: '/auth/logout'
-  //   })
-  //   .then(function(res) {
-  //     //console.log('logout', res)
-  //     return res.data;
-  //   })
-  //   .catch(function(err) {
-  //     console.log(err);
-  //   })
-  // }
+  this.logout = function() {
+    return $http({
+      method: 'GET',
+      url: '/logout'
+    })
+    .then(function(res) {
+      //console.log('logout', res)
+      return res.data;
+    })
+    .catch(function(err) {
+      console.log(err);
+    })
+  }
 
-  // this.read = function(){
-  //   //console.log("this is user,", user)
-  //   return $http({
-  //     method: 'GET',
-  //     url: '/api/users'
-  //   });
-  // }
+  this.getAllCustomers = function(){
+    //console.log("this is user,", customer)
+    return $http({
+      method: 'GET',
+      url: '/api/customers'
+    });
+  }
 
-  // this.getUserId = function(id){
-  //   return $http({
-  //     method: 'GET',
-  //     url: '/api/user/user:id?id=' + id
-  //   });
-  // }
+  this.getCustomer = function(id){
+    return $http({
+      method: 'GET',
+      url: '/api/customers/customer:id?id=' + id
+    });
+  }
 
   this.getTeams = function(){
     return $http({

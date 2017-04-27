@@ -1,0 +1,103 @@
+<div class="container">
+  <h1>Sign in!</h1>
+  <form action="/auth/local" method="POST" name="userForm" ng-submit="submitForm()" novalidate>
+    <div class="form-group" ng-class="{ 'has-error' : userForm.email.$invalid && !userForm.email.$pristine }">
+        <label>Email</label>
+        <input type="email" name="email" class="form-control" ng-model="email" required>
+        <p ng-show="userForm.email.$invalid && !userForm.email.$pristine" class="help-block">Enter a valid email.</p>
+    </div>
+    <div class="form-group" ng-class="{ 'has-error' : userForm.password.$invalid && !userForm.password.$pristine }">
+       <label>password</label>
+       <input type="password" name="password" class="form-control" ng-model="password" required>
+       <p ng-show="userForm.password.$invalid && !userForm.password.$pristine" class="help-block">You password is required.</p>
+    </div>
+    <div id="lower">
+      <input type="checkbox"><label for="checkbox">Keep me logged in</label>
+      <button  type="submit" class="btn btn-primary" ng-disabled="userForm.$invalid" ng-click="loginUser({email:email, password:password})">Login</button>
+      <button class="btn btn-primary" ui-sref="signIn">Register</button>
+    </div>
+   </form>        
+ </div>
+
+
+
+
+
+
+
+
+<div class="col-sm-6">
+ <div class="row">
+  <div class="col-xs-3">
+  <h3>Form</h3>
+  <table class="table table-bordered">
+      <tbody>
+          <tr>
+              <td ng-class="{ success: userForm.$valid, danger: userForm.$invalid }">Valid</td>
+          </tr>
+          <tr>
+              <td ng-class="{ success: userForm.$pristine, danger: !userForm.$pristine }">Pristine</td>
+          </tr>
+          <tr>
+              <td ng-class="{ success: userForm.$dirty }">Dirty</td>
+          </tr>
+      </tbody>
+  </table>
+</div>
+<div class="col-xs-3">
+  <h3>Name</h3>
+  <table class="table table-bordered">
+      <tbody>
+          <tr>
+              <td ng-class="{ success: userForm.name.$valid, danger: userForm.name.$invalid }">Valid</td>
+          </tr>
+          <tr>
+              <td ng-class="{ success: userForm.name.$pristine, danger: !userForm.name.$pristine }">Pristine</td>
+          </tr>
+          <tr>
+              <td ng-class="{ success: userForm.name.$dirty }">Dirty</td>
+          </tr>
+          <tr>
+              <td ng-class="{ success: userForm.name.$touched }">Touched</td>
+          </tr>
+      </tbody>
+  </table>
+</div>
+<div class="col-xs-3">
+  <h3>email</h3>
+  <table class="table table-bordered">
+      <tbody>
+          <tr>
+              <td ng-class="{ success: userForm.email.$valid, danger: userForm.email.$invalid }">Valid</td>
+          </tr>
+          <tr>
+              <td ng-class="{ success: userForm.email.$pristine, danger: !userForm.email.$pristine }">Pristine</td>
+          </tr>
+          <tr>
+              <td ng-class="{ success: userForm.email.$dirty }">Dirty</td>
+          </tr>
+          <tr>
+              <td ng-class="{ success: userForm.email.$touched }">Touched</td>
+          </tr>
+      </tbody>
+  </table>
+</div>
+<div class="col-xs-3">
+  <h3>password</h3>
+  <table class="table table-bordered">
+      <tbody>
+          <tr>
+              <td ng-class="{ success: userForm.password.$valid, danger: userForm.password.$invalid }">Valid</td>
+          </tr>
+          <tr>
+              <td ng-class="{ success: userForm.password.$pristine, danger: !userForm.password.$pristine }">Pristine</td>
+          </tr>
+          <tr>
+              <td ng-class="{ success: userForm.password.$dirty }">Dirty</td>
+          </tr>
+          <tr>
+              <td ng-class="{ success: userForm.password.$touched }">Touched</td>
+          </tr>
+      </tbody>
+  </table>
+</div>

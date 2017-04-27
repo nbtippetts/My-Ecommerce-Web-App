@@ -11,87 +11,82 @@
     <link rel="stylesheet" href="./style/product.css">
     <link rel="stylesheet" href="./style/payment.css">
     <link rel="stylesheet" href="./style/summary.css">
-  </head>
-  <body>
+   </head>
+     <body>
 
-    <section class="header">
-       <nav class="navbar navbar-inverse">
-         <div class="container-fluid">
+       <section class="header">
+          <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
 
-           <div class="navbar-header">
-             <a class="navbar-brand" ui-sref="home"><h2>LIFTED SKI.co</h2></a>
-           </div>
+              <div class="navbar-header">
+                <a class="navbar-brand" ui-sref="home"><h2>LIFTED SKI.co</h2></a>
+              </div>
 
-           <ul class="nav navbar-nav">
-             <li class="active"><a ui-sref="home">LIFTED</a></li>
+              <ul class="nav navbar-nav">
+                <li class="active"><a ui-sref="login">Login</a></li>
 
-             <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown"><h5>SKIS & GEAR</h5> <span class="caret"></span></a>
-               <ul class="dropdown-menu" id="dropdown1">
-                <li><a ui-sref="products"><h1>SHOP</h1> <img ng-src="img/ski.png" alt="ski image" height="80px" width="50px"/></a></li>
-                 <li><a ui-sref="video"><h1>VIDEOS</h1>  <img src="./img/video.png" alt="video icon" height="50px" width="50px" /></a></li>
-               </ul>
-             </li>
+                <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown"><h5>SKIS & GEAR</h5> <span class="caret"></span></a>
+                  <ul class="dropdown-menu" id="dropdown1">
+                   <li><a ui-sref="products"><h1>SHOP</h1> <img ng-src="img/ski.png" alt="ski image" height="80px" width="50px"/></a></li>
+                    <li><a ui-sref="video"><h1>VIDEOS</h1>  <img src="./img/video.png" alt="video icon" height="50px" width="50px" /></a></li>
+                  </ul>
+                </li>
 
-              <!-- <li><a ui-sref="team"><h4>The Team</h4></a></li> -->
+                 <!-- <li><a ui-sref="team"><h4>The Team</h4></a></li> -->
 
-              <!-- here we get the logout url from our server to run the logout function  -->
-             </ul>
-             <!-- <a href="/auth/logout"><button style="background-color: #333">Logout</button></a> -->
-             <div class="show-cart"><a ui-sref="cart"><img src="../img/cart.png" alt="Shopping cart"/></a></div>
+                 <!-- here we get the logout url from our server to run the logout function  -->
+                </ul>
+                <!-- <a href="/auth/logout"><button style="background-color: #333">Logout</button></a> -->
+                <div class="show-cart"><a ui-sref="cart"><img src="../img/cart.png" alt="Shopping cart"/></a></div>
 
-               <ngcart-summary></ngcart-summary>
-               <script type="text/ng-template" id="template/ngCart/summary.html">
-                 <div class="row">
-                   <div class="shop">{{ ngCart.getTotalItems() }}
-                       <ng-pluralize count="ngCart.getTotalItems()" when="{1: 'item', 'other':'items'}"></ng-pluralize>
-                       <br />{{ ngCart.totalCost() | currency }}
+                  <ngcart-summary></ngcart-summary>
+                  <script type="text/ng-template" id="template/ngCart/summary.html">
+                    <div class="row">
+                      <div class="shop">{{ ngCart.getTotalItems() }}
+                          <ng-pluralize count="ngCart.getTotalItems()" when="{1: 'item', 'other':'items'}"></ng-pluralize>
+                          <br />{{ ngCart.totalCost() | currency }}
+                      </div>
+                    </div>
+                 </script>
+              </div>
+           </nav>
+         </section>
+
+               <!-- <footer class="footer1">
+               <div class="footer">
+                    <div class="container">
+                        <div class="row">
+                          <div class="col-xs-12">
+                            <p><h3 style="color: white; text-align: center">GET IN TOUCH</h3></p>
+                            <p><h4 style="color: white; text-align: center">6183 S 1550 E South Ogden, UT</h4></p>
+                            <p><h4 style="color: white; text-align: center">385-238-9734</h4></p>
+                            <p><h5 style="color: white; text-align: center"><a href="mailto:nbtippetts@gmail.com">nbtippetts@gmail.com</a></h5></p>
+                                <ul class="social">
+                                    <li><a href="https://www.facebook.com/noah.tippetts.3"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="https://www.instagram.com/noha_trippetts/"><i class="fa fa-instagram"></i></a></li>
+                                    <li><a href="https://github.com/nbtippetts"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+                                    <li><a href="https://www.linkedin.com/in/noah-tippetts-614418130"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                                </ul>
+                            </div>
+                          </div>
                    </div>
-                 </div>
-              </script>
-           </div>
-        </nav>
-      </section>
+               </div>
+             </footer> -->
 
 
+             <!-- <div style='text-align:center;'>
+             	<script type= "text/javascript" src = "../js/countries.js"></script>
+             	Select Country (with states):   <select id="country" name ="country"></select> </br></br>
+             	Select State: <select name ="state" id ="state"></select>  </br> </br> <hr/>
+             	Select Country:   <select id="country2" name ="country2"></select>
+             </div>
 
-      <!-- <footer class="footer1">
-      <div class="footer">
-           <div class="container">
-               <div class="row">
-                 <div class="col-xs-12">
-                   <p><h3 style="color: white; text-align: center">GET IN TOUCH</h3></p>
-                   <p><h4 style="color: white; text-align: center">6183 S 1550 E South Ogden, UT</h4></p>
-                   <p><h4 style="color: white; text-align: center">385-238-9734</h4></p>
-                   <p><h5 style="color: white; text-align: center"><a href="mailto:nbtippetts@gmail.com">nbtippetts@gmail.com</a></h5></p>
-                       <ul class="social">
-                           <li><a href="https://www.facebook.com/noah.tippetts.3"><i class="fa fa-facebook"></i></a></li>
-                           <li><a href="https://www.instagram.com/noha_trippetts/"><i class="fa fa-instagram"></i></a></li>
-                           <li><a href="https://github.com/nbtippetts"><i class="fa fa-github" aria-hidden="true"></i></a></li>
-                           <li><a href="https://www.linkedin.com/in/noah-tippetts-614418130"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                       </ul>
-                   </div>
-                 </div>
-          </div>
-      </div>
-    </footer> -->
-
-
-    <!-- <div style='text-align:center;'>
-    	<script type= "text/javascript" src = "../js/countries.js"></script>
-    	Select Country (with states):   <select id="country" name ="country"></select> </br></br>
-    	Select State: <select name ="state" id ="state"></select>  </br> </br> <hr/>
-    	Select Country:   <select id="country2" name ="country2"></select>
-    </div>
-
-    <script language="javascript">
-    	populateCountries("country", "state"); // first parameter is id of country drop-down and second parameter is id of state drop-down
-    	populateCountries("country2");
-    	populateCountries("country2");
-    </script> -->
-
-
-
-        <ui-view></ui-view>
+             <script language="javascript">
+             	populateCountries("country", "state"); // first parameter is id of country drop-down and second parameter is id of state drop-down
+             	populateCountries("country2");
+             	populateCountries("country2");
+             </script> -->
+        <div ui-view></div>
 
         <script src="./bower_components/angular/angular.js"></script>
         <script src="./bower_components/ngcart/dist/ngCart.js"></script>
